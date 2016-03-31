@@ -3,8 +3,6 @@
 
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
-
   <title>Brooke's front-end Streetlife challenge</title>
 
   <!-- CSS reset --> 
@@ -29,8 +27,14 @@
   <base href="/">
 </head>
 
-<body>
-  
+<body ng-controller="homeController">
+  <header class="container-fluid">
+    <h1>Life on the street</h1>
+  </header>
+
+  <section class="container-fluid">
+      <div ui-view></div>
+  </section>
   
 </body>
 
