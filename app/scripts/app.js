@@ -49,4 +49,9 @@ app.controller('homeController', function($scope, newsFeed) {
   return {
       template: '<p class="message-body" ng-bind-html="\'{{ newsitem.body }}\'"></p>'
     };
+})
+.directive('commentBody', function() {
+  return {
+    template: '<p class="comment-body" ng-bind-html="\'{{ comment.body }}\'"></p>'
+  };
 });

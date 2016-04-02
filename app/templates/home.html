@@ -33,7 +33,27 @@
           </ul>
           </div>
 
-          
+          <div class="col-xs-12 comments">
+            <ul>
+              <li ng-repeat="comment in newsitem.comments">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <img class="img-responsive" src="{{ comment.author.avatar }}" alt="Avatar" />
+                  </div>
+                  <div class="col-xs-10">
+                    <h3 class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></h3>
+                    <p>Updated at: {{ comment.updated_at }}</p>
+                  </div>
+                </div>
+
+                <div class="col-xs-12">
+                  <div comment-body></div>
+                </div>
+
+              </li>
+            </ul>
+
+          </div> 
 
         </div>
           
