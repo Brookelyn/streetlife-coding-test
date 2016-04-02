@@ -1,5 +1,5 @@
-<article>
-  <div class="container-fluid">
+<article class="container-fluid">
+  <!-- <div class="container-fluid"> -->
   <ul>
     <li ng-repeat="newsitem in feed">
 
@@ -16,7 +16,7 @@
             <div class="col-xs-10">
               <div class="row">
                 <h3 class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></h3>
-                <p>Updated at: {{ newsitem.updated_at}}</p> 
+                <p>Updated at: {{ newsitem.posted_at | pubAt }}</p> 
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@
           
     </li>
   </ul>
-</div>
+<!-- </div> -->
 </article>
 
 
