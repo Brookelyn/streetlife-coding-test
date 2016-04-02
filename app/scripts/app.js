@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = angular.module('app', ['ui.router', 'ngSanitize']);
 
 // Set up
 app.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
@@ -43,6 +43,10 @@ app.controller('homeController', function($scope, newsFeed) {
 
   newsFeed.getNewsfeed(function(json) {
     $scope.feed = json.messages;
-    console.log(json);
   })
+})
+.directive('messageBody', function() {
+  return {
+      template: '<p class="message-body" ng-bind-html="\'{{ newsitem.body }}\'"></p>'
+    };
 });

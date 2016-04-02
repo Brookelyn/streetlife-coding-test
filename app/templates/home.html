@@ -1,11 +1,35 @@
-<article class="container-fluid">
+<article>
+  <div class="container-fluid">
   <ul>
     <li ng-repeat="newsitem in feed">
-      <div class="row">
+
+        <div class="row">
+          
           <div class="col-xs-12">
-            Testing
+            <h2 class="subject">{{ newsitem.subject }}
           </div>
-      </div>
+
+          <div class="row">
+            <div class="col-xs-2">
+              <img class="img-responsive" src="{{ newsitem.author.avatar }}" alt="Avatar" />
+            </div>
+            <div class="col-xs-10">
+              <div class="row">
+                <h3 class="author">{{ newsitem.author.display_name}}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <div message-body></div>
+          </div>
+
+        </div>
+          
     </li>
   </ul>
+</div>
 </article>
+
+
+
