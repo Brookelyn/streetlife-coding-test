@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ui.router', 'ngSanitize']);
 
 // Set up
-app.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+app.config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider.state('home', {
@@ -52,6 +52,7 @@ app.factory('commentFeed', function($http){
     return $http.get('https://s3-eu-west-1.amazonaws.com/streetlife-coding-challenge/comments.json')
     .success(function(data) {
       json = data;
+      console.log(json);
       callback(data);
     })
     .error(function(data) {
@@ -79,12 +80,12 @@ app.controller('homeController', function($scope, newsFeed) {
 })
   .directive('messageBody', function() {
     return {
-        template: '<p class="message-body" ng-bind-html="\'{{ newsitem.body }}\'"></p>'
+        template: '<p class="message-body" ng-bind-html="newsitem.body"></p>'
       };
   })
   .directive('commentBody', function() {
     return {
-      template: '<p class="comment-body" ng-bind-html="\'{{ comment.body }}\'"></p>'
+      template: '<p class="comment-body" ng-bind-html="comment.body"></p>'
     };
 });
 
@@ -93,6 +94,12 @@ app.controller('commentsController', function($scope, commentFeed) {
   commentFeed.getCommentFeed(function(json) {
     $scope.feed = json.comments;
   });
+})
+  .directive('commentText', function() {
+    
+    return {
+      template: '<p class="comment-text" ng-bind-html="comment.body"></p>'
+    };
 });
 
 // Updated at filter
@@ -110,4 +117,9 @@ app.filter('pubAt', function() {
   };
 
  
+});
+
+// Output JSON html correctly
+app.filter('unsafe', function ($sce) {
+  return $sce.trustAsHtml;
 });

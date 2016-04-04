@@ -1,0 +1,25 @@
+<article class="container-fluid">
+  <ul>
+    <li ng-repeat="comment in feed">
+      <div class="row comments">
+  
+        <div class="row">
+          <div class="col-xs-2">
+            <img class="img-responsive" src="{{ comment.author.avatar }}" alt="Avatar" />
+          </div>
+          <div class="col-xs-10">
+            <div class="row">
+              <h3 class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name}}</a></h3>
+              <p>Updated at: {{ comment.updated_at | pubAt }}</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div comment-text></div>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</article>
