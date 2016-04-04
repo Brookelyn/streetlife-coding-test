@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ngSanitize']);
+var app = angular.module('app', ['ui.router', 'ngSanitize', 'angularMoment']);
 
 // Set up
 app.config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
@@ -52,7 +52,6 @@ app.factory('commentFeed', function($http){
     return $http.get('https://s3-eu-west-1.amazonaws.com/streetlife-coding-challenge/comments.json')
     .success(function(data) {
       json = data;
-      console.log(json);
       callback(data);
     })
     .error(function(data) {
@@ -96,30 +95,8 @@ app.controller('commentsController', function($scope, commentFeed) {
   });
 })
   .directive('commentText', function() {
-    
     return {
       template: '<p class="comment-text" ng-bind-html="comment.body"></p>'
     };
 });
 
-// Updated at filter
-
-app.filter('pubAt', function() {
-  return function(posted_at){
-    var today = new Date();
-    var posted = posted_at;
-
-    var time = posted.substring(posted.lastIndexOf("T")+1,posted.lastIndexOf("."));
-
-
-
-     return today;
-  };
-
- 
-});
-
-// Output JSON html correctly
-app.filter('unsafe', function ($sce) {
-  return $sce.trustAsHtml;
-});

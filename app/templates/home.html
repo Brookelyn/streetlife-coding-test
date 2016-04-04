@@ -15,7 +15,7 @@
             <div class="col-xs-10">
               <div class="row">
                 <h3 class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></h3>
-                <p>Updated at: {{ newsitem.posted_at | pubAt }}</p> 
+                <p class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</p> 
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-xs-10">
                     <h3 class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></h3>
-                    <p>Updated at: {{ comment.updated_at }}</p>
+                    <p class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</p>
                   </div>
                 </div>
 
