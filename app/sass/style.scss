@@ -1,8 +1,31 @@
+$francois: 'Francois One', sans-serif;
+$opensans: 'Open Sans', sans-serif;
+
 #content {
   margin: 0 auto;
   max-width: 768px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $francois;
+}
+
+p {
+  font-family: $opensans;
+}
+
 h1 {
   text-align: center;
+}
+
+.post {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  margin-bottom: 2em;
+  padding: 0 0 0 1em;
+}
+
+.author, .posted-date {
+  display: inline-block;
+  
 }

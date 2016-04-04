@@ -6,7 +6,8 @@
   <title>Brooke's front-end Streetlife challenge</title>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css"> 
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
+  <link href='https://fonts.googleapis.com/css?family=Francois+One|Open+Sans:400,600' rel='stylesheet' type='text/css'> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <link rel="stylesheet" href="/css/style.css">
@@ -33,6 +34,11 @@
     <header>
       <h1>Life on the street</h1>
     </header>
+
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="/">Newsfeed</a></li>
+      <li role="presentation"><a href="/comments">Comments</a></li>
+    </ul>
 
     <section id="content">
     <div ui-view></div>

@@ -2,5 +2,20 @@
   margin: 0 auto;
   max-width: 768px; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Francois One', sans-serif; }
+
+p {
+  font-family: 'Open Sans', sans-serif; }
+
 h1 {
   text-align: center; }
+
+.post {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  margin-bottom: 2em;
+  padding: 0 0 0 1em; }
+
+.author, .posted-date {
+  display: inline-block; }

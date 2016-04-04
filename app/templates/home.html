@@ -1,6 +1,6 @@
 <article class="container-fluid">
   <ul>
-    <li ng-repeat="newsitem in feed">
+    <li ng-repeat="newsitem in feed" class="post">
 
         <div class="row origin-post">
           
@@ -8,21 +8,24 @@
             <h2 class="subject">{{ newsitem.subject }}
           </div>
 
-          <div class="row">
-            <div class="col-xs-2">
-              <img class="img-responsive" src="{{ newsitem.author.avatar }}" alt="Avatar" />
-            </div>
-            <div class="col-xs-10">
-              <div class="row">
-                <h3 class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></h3>
-                <p class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</p> 
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-2">
+                <img class="img-responsive img-thumbnail" src="{{ newsitem.author.avatar }}" alt="Avatar" />
+              </div>
+              <div class="col-xs-10">
+                  <h3 class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></h3>
+                  <p class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</p> 
+                </div>
+                <div class="col-xs-10">
+                  <div message-body></div>
+                </div>
               </div>
             </div>
-          </div>
+            
+          
 
-          <div class="col-xs-12">
-            <div message-body></div>
-          </div>
+          
 
           <div class="col-xs-12">
             <ul>
@@ -37,7 +40,7 @@
               <li ng-repeat="comment in newsitem.comments">
                 <div class="row">
                   <div class="col-xs-2">
-                    <img class="img-responsive" src="{{ comment.author.avatar }}" alt="Avatar" />
+                    <img class="img-responsive img-thumbnail" src="{{ comment.author.avatar }}" alt="Avatar" />
                   </div>
                   <div class="col-xs-10">
                     <h3 class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></h3>
