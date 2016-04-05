@@ -32,7 +32,8 @@ h1 {
   display: inline-block; }
 
 .posted-date {
-  color: #a6a6a6; }
+  color: #a6a6a6;
+  font-style: italic; }
 
 .img-author {
   margin-right: 1em;
@@ -47,4 +48,16 @@ h1 {
     text-decoration: none; }
   .author a:hover, .author a:visited {
     color: #00BF7F;
+    text-decoration: none; }
+
+.message-body, .comment-body {
+  font-size: 1.2em; }
+
+.topic {
+  float: left;
+  margin-right: 1em;
+  background: #00BF7F;
+  border-radius: 20px; }
+  .topic a, .topic a:hover, .topic a:visited {
+    color: #FFF;
     text-decoration: none; }

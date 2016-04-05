@@ -46,6 +46,7 @@ h1 {
 
 .posted-date {
   color: #a6a6a6;
+  font-style: italic;
 }
 
 .img-author {
@@ -67,4 +68,20 @@ h1 {
     color: #00BF7F;
     text-decoration: none;
   }
+}
+
+.message-body, .comment-body {
+  font-size: 1.2em;
+}
+
+.topic {
+  float: left;
+  margin-right: 1em;
+  background: #00BF7F;
+  border-radius: 20px;
+  
+  a, a:hover, a:visited {
+    color: #FFF;
+    text-decoration: none;
+  } 
 }
