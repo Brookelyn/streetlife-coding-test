@@ -2,49 +2,58 @@
   <ul>
     <li ng-repeat="newsitem in feed" class="post">
 
-        <div class="row origin-post">
-          
-          <div class="col-xs-12">
-            <h2 class="subject"><a href="https://www.streetlife.com/p/{{ newsitem.id }}">{{ newsitem.subject }}</a></h2>
-          </div>
+        <div class="row">
 
-          <div class="col-xs-12">
-            <div class="row">
-              <div class="col-xs-2">
-                <a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}"><img class="img-responsive img-thumbnail img-author" src="{{ newsitem.author.avatar }}" alt="Avatar" /></a>
-              </div>
-              <div class="col-xs-10">
-                <p><span class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></span>
-                <span class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</span></p>
-                <div message-body></div> 
-                <ul>
-                  <li ng-repeat="topic in newsitem.topics">
-                    <button type="button" class="btn btn-xs topic"><a href="https://www.streetlife.com/topic/{{ topic.slug }}">{{ topic.name }}</a></button>
-                  </li>
-                </ul> 
+          <div class= "origin-post">
+            
+            <div class="col-xs-12">
+              <h2 class="subject"><a href="https://www.streetlife.com/p/{{ newsitem.id }}">{{ newsitem.subject }}</a></h2>
+            </div>
+          
+
+            <div class="col-xs-12">
+              <div class="row">
+                
+                <div class="col-xs-2">
+                  <a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}"><img class="img-responsive img-thumbnail img-author" src="{{ newsitem.author.avatar }}" alt="Avatar" /></a>
+                </div>
+                
+                <div class="col-xs-10">
+                  <p>
+                    <span class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></span>
+                    <span class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</span>
+                  </p>
+                 
+                  <div message-body></div>
+                
+                  <ul>
+                    <li ng-repeat="topic in newsitem.topics">
+                      <button type="button" class="btn btn-xs topic"><a href="https://www.streetlife.com/topic/{{ topic.slug }}">{{ topic.name }}</a></button>
+                    </li>
+                  </ul> 
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-xs-12 comments">
+          <div class="col-xs-12">
             <ul>
-              <li ng-repeat="comment in newsitem.comments">
-                <div class="row">
-                  <div class="col-xs-2">
-                    <img class="img-responsive img-thumbnail" src="{{ comment.author.avatar }}" alt="Avatar" />
+                <li ng-repeat="comment in newsitem.comments" class="comment">
+                  <div class="row comment-wrapper">
+                    <div class="col-xs-2">
+                      <img class="img-responsive img-thumbnail img-author" src="{{ comment.author.avatar }}" alt="Avatar" />
+                    </div>
+                    <div class="col-xs-10">
+                      <p>
+                        <span class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></span>
+                        <span class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</span>
+                      </p>
+                      <div comment-body></div>
+                    </div>
                   </div>
-                  <div class="col-xs-10">
-                    <h3 class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></h3>
-                    <p class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</p>
-                  </div>
-                </div>
-
-                <div class="col-xs-12">
-                  <div comment-body></div>
-                </div>
-
-              </li>
-            </ul>
+                </li>
+              </ul>
+            
 
           </div> 
 

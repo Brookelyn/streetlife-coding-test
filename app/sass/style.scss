@@ -18,9 +18,19 @@ h1 {
   text-align: center;
 }
 
+a, a:visited {
+  text-decoration: none;
+  color: #00BF7F;
+}
+
+a:hover, a:active  {
+  text-decoration: none;
+  color: #00402A;
+}
+
 .post {
   border-top: 1em solid #007F54;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
   padding: 0 0 0 1em;
 }
 
@@ -39,7 +49,6 @@ h1 {
     color: #007F54;
   }
 }
-
 .author, .posted-date {
   display: inline-block; 
 }
@@ -65,7 +74,6 @@ h1 {
   }
 
   a:hover, a:visited {
-    color: #00BF7F;
     text-decoration: none;
   }
 }
@@ -84,4 +92,24 @@ h1 {
     color: #FFF;
     text-decoration: none;
   } 
+}
+
+.comment {
+  border-top: 1px solid #00E598;
+  margin-top: 2em;
+}
+
+.comment-wrapper {
+  margin-top: 1em;
+}
+
+.comment-author {
+  font-family: $francois;
+  line-height: 1em;
+  font-size: 1.25em;
+
+  a {
+   color: #00E598;
+   text-decoration: none;
+  }
 }
