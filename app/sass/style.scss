@@ -6,6 +6,10 @@ $opensans: 'Open Sans', sans-serif;
   max-width: 768px;
 }
 
+header {
+  margin-bottom: 3em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $francois;
 }
@@ -16,6 +20,9 @@ p {
 
 h1 {
   text-align: center;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
 }
 
 a, a:visited {
@@ -33,6 +40,25 @@ a:hover, a:active  {
   text-decoration: none;
   color: #00402A;
 }
+
+.views {
+  .btn {
+    border: none;
+  }
+
+  .btn:hover,
+  .btn:active,
+  .btn:focus {
+    background-color: #007F54;
+    color: #FFF;
+  }
+
+  .active {
+    background-color: #007F54;
+    color: #FFF;
+  }
+}
+
 
 .post {
   border-top: 1em solid #00402A;

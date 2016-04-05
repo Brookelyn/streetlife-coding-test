@@ -15,8 +15,8 @@ app.config(['$stateProvider', '$locationProvider', function ($stateProvider, $lo
     controller: 'commentsController',
     templateUrl: 'templates/comments.html'
   });
-
 }]);
+
 
 // Pull in newsfeed data
 app.factory('newsFeed', function($http){
@@ -45,6 +45,7 @@ app.factory('newsFeed', function($http){
   };
 })
 
+
 // Pull in comment feed data
 app.factory('commentFeed', function($http){
   var json;
@@ -71,16 +72,13 @@ app.factory('commentFeed', function($http){
   };
 })
 
+
 // Homepage controller
 app.controller('homeController', function($scope, newsFeed) {
-
+  $scope.active
   newsFeed.getNewsfeed(function(json) {
     $scope.feed = json.messages;
-  });
-
-  // var checkComments = function() {
-  //   if ()
-  // }
+  }); 
 })
   .directive('messageBody', function() {
     return {
@@ -92,6 +90,7 @@ app.controller('homeController', function($scope, newsFeed) {
       template: '<p class="comment-body" ng-bind-html="comment.body"></p>'
     };
 });
+
 
 // Comment feed controller
 app.controller('commentsController', function($scope, commentFeed) {

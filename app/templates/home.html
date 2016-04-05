@@ -1,71 +1,68 @@
+
 <article class="container-fluid">
   <ul>
     <li ng-repeat="newsitem in feed" class="post">
 
-        <div class="row">
+      <div class="row">
 
-          <div class= "origin-post">
-            
-            <div class="col-xs-12">
-              <h2 class="subject"><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}">{{ newsitem.subject }}</a></h2>
-            </div>
-
-            <div class="col-xs-12">
-              <div class="row">
-                
-                <div class="col-xs-2">
-                  <a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}"><img class="img-responsive img-thumbnail img-author" src="{{ newsitem.author.avatar }}" alt="Avatar" /></a>
-                </div>
-                
-                <div class="col-xs-10">
-                  <p>
-                    <span class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></span>
-                    <span class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</span>
-                  </p>
-                 
-                  <div message-body></div>
-                
-                  <ul>
-                    <li ng-repeat="topic in newsitem.topics">
-                      <button type="button" class="btn btn-xs topic"><a href="https://www.streetlife.com/topic/{{ topic.slug }}">{{ topic.name }}</a></button>
-                    </li>
-                  </ul> 
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
+        <div class= "origin-post">
+          
           <div class="col-xs-12">
-            <p class="text-center" ng-hide="newsitem.comments_count <= 2"><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-sm btn-block view-all">View previous {{ newsitem.comments_count -2 }} comments</button></a></p>
-            <ul>
-                <li ng-repeat="comment in newsitem.comments | filter:{body: ''} | limitTo: -2" class="comment">
-                  <div class="row comment-wrapper">
-                    <div class="col-xs-2">
-                      <img class="img-responsive img-thumbnail img-author" src="{{ comment.author.avatar }}" alt="Avatar" />
-                    </div>
-                    <div class="col-xs-10">
-                      <p>
-                        <span class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></span>
-                        <span class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</span>
-                      </p>
-                      <div comment-body></div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+            <h2 class="subject"><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}">{{ newsitem.subject }}</a></h2>
           </div>
 
           <div class="col-xs-12">
             <div class="row">
-              <div class="col-xs-10 col-xs-offset-2"
-            <p><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-lg add">Add a comment</button></a></p>
+              
+              <div class="col-xs-2">
+                <a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}"><img class="img-responsive img-thumbnail img-author" src="{{ newsitem.author.avatar }}" alt="Avatar" /></a>
+              </div>
+              
+              <div class="col-xs-10">
+                <p>
+                  <span class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></span>
+                  <span class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</span>
+                </p>
+               
+                <div message-body></div>
+              
+                <ul>
+                  <li ng-repeat="topic in newsitem.topics">
+                    <button type="button" class="btn btn-xs topic"><a href="https://www.streetlife.com/topic/{{ topic.slug }}">{{ topic.name }}</a></button>
+                  </li>
+                </ul> 
+              </div>
+            </div>
           </div>
         </div>
-          </div>
+
+        <div class="col-xs-12">
+          <p class="text-center" ng-hide="newsitem.comments_count <= 2"><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-sm btn-block view-all">View previous {{ newsitem.comments_count -2 }} comments</button></a></p>
+          <ul>
+              <li ng-repeat="comment in newsitem.comments | filter:{body: ''} | limitTo: -2" class="comment">
+                <div class="row comment-wrapper">
+                  <div class="col-xs-2">
+                    <img class="img-responsive img-thumbnail img-author" src="{{ comment.author.avatar }}" alt="Avatar" />
+                  </div>
+                  <div class="col-xs-10">
+                    <p>
+                      <span class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></span>
+                      <span class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</span>
+                    </p>
+                    <div comment-body></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
         </div>
-          
+
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-2"
+          <p><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-lg add">Add a comment</button></a></p>
+        </div>
+
+      </div>
     </li>
   </ul>
 </article>

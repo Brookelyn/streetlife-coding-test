@@ -2,6 +2,9 @@
   margin: 0 auto;
   max-width: 768px; }
 
+header {
+  margin-bottom: 3em; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Francois One', sans-serif; }
 
@@ -9,7 +12,10 @@ p {
   font-family: 'Open Sans', sans-serif; }
 
 h1 {
-  text-align: center; }
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  padding-top: 1em; }
 
 a, a:visited {
   text-decoration: none;
@@ -23,6 +29,15 @@ p > a {
 a:hover, a:active {
   text-decoration: none;
   color: #00402A; }
+
+.views .btn {
+  border: none; }
+.views .btn:hover, .views .btn:active, .views .btn:focus {
+  background-color: #007F54;
+  color: #FFF; }
+.views .active {
+  background-color: #007F54;
+  color: #FFF; }
 
 .post {
   border-top: 1em solid #00402A;
