@@ -5,27 +5,21 @@
         <div class="row origin-post">
           
           <div class="col-xs-12">
-            <h2 class="subject">{{ newsitem.subject }}
+            <h2 class="subject"><a href="https://www.streetlife.com/p/{{ newsitem.id }}">{{ newsitem.subject }}</a></h2>
           </div>
 
           <div class="col-xs-12">
             <div class="row">
               <div class="col-xs-2">
-                <img class="img-responsive img-thumbnail" src="{{ newsitem.author.avatar }}" alt="Avatar" />
+                <img class="img-responsive img-thumbnail img-author" src="{{ newsitem.author.avatar }}" alt="Avatar" />
               </div>
               <div class="col-xs-10">
-                  <h3 class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></h3>
-                  <p class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</p> 
-                </div>
-                <div class="col-xs-10">
-                  <div message-body></div>
-                </div>
+                <p><span class="author"><a href="https://www.streetlife.com/p/{{ newsitem.author.profile_id }}">{{ newsitem.author.display_name}}</a></span>
+                <em><span class="posted-date"> around <span am-time-ago="newsitem.posted_at"></span> near {{ newsitem.author.nearest_area.name }}</span></em></p>
+                <div message-body></div>  
               </div>
             </div>
-            
-          
-
-          
+          </div>
 
           <div class="col-xs-12">
             <ul>

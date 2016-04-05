@@ -19,13 +19,52 @@ h1 {
 }
 
 .post {
-  border-top: 1px solid #000;
-  border-left: 1px solid #000;
+  border-top: 1em solid #007F54;
   margin-bottom: 2em;
   padding: 0 0 0 1em;
 }
 
+.subject {
+  color: #00402A;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+  a {
+    color: #00402A;
+    text-decoration: none;
+  }
+
+  a:hover, a:visited {
+    text-decoration: none;
+    color: #007F54;
+  }
+}
+
 .author, .posted-date {
-  display: inline-block;
-  
+  display: inline-block; 
+}
+
+.posted-date {
+  color: #a6a6a6;
+}
+
+.img-author {
+  margin-right: 1em;
+  min-width: 60px;
+}
+
+.author {
+  font-family: $francois;
+  line-height: 1em;
+  font-size: 1.5em;
+
+  a {
+    color: #007F54;
+    text-decoration: none;
+  }
+
+  a:hover, a:visited {
+    color: #00BF7F;
+    text-decoration: none;
+  }
 }
