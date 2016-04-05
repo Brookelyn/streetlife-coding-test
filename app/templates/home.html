@@ -35,7 +35,10 @@
             </div>
           </div>
 
+
+
           <div class="col-xs-12">
+            <p class="text-center" ng-hide="newsitem.comments_count <= 2"><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-sm btn-block view-all">View previous {{ newsitem.comments_count -2 }} comments</button></a></p>
             <ul>
                 <li ng-repeat="comment in newsitem.comments | filter:{body: ''} | limitTo: -2" class="comment">
                   <div class="row comment-wrapper">
@@ -54,8 +57,13 @@
               </ul>
           </div>
 
-          <p class="text-center" ng-show><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-lg view-all">View all comments</button></a></p>
-
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-10 col-xs-offset-2"
+            <p><a href="https://www.streetlife.com/conversation/{{ newsitem.id }}"><button type="button" class="btn btn-lg add">Add a comment</button></a></p>
+          </div>
+        </div>
+          </div>
         </div>
           
     </li>

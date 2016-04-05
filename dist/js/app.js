@@ -26,6 +26,7 @@ app.factory('newsFeed', function($http){
     return $http.get('https://s3-eu-west-1.amazonaws.com/streetlife-coding-challenge/newsfeed.json')
     .success(function(data) {
       json = data;
+      console.log(data);
       callback(data);
     })
     .error(function(data) {
@@ -76,6 +77,10 @@ app.controller('homeController', function($scope, newsFeed) {
   newsFeed.getNewsfeed(function(json) {
     $scope.feed = json.messages;
   });
+
+  // var checkComments = function() {
+  //   if ()
+  // }
 })
   .directive('messageBody', function() {
     return {
@@ -86,8 +91,7 @@ app.controller('homeController', function($scope, newsFeed) {
     return {
       template: '<p class="comment-body" ng-bind-html="comment.body"></p>'
     };
-  })
- ;
+});
 
 // Comment feed controller
 app.controller('commentsController', function($scope, commentFeed) {

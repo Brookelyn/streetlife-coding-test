@@ -23,13 +23,19 @@ a, a:visited {
   color: #00BF7F;
 }
 
+p > a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 a:hover, a:active  {
   text-decoration: none;
   color: #00402A;
 }
 
 .post {
-  border-top: 1em solid #007F54;
+  border-top: 1em solid #00402A;
   margin-bottom: 5em;
   padding: 0 0 0 1em;
 }
@@ -96,9 +102,10 @@ a:hover, a:active  {
 }
 
 .view-all {
-  background-color: #007F54;
+  background-color: #00E598;
   color: #FFF;
   margin-top: 1.5em;
+  border-radius: 0;
 }
 
 .comment {
@@ -119,4 +126,10 @@ a:hover, a:active  {
    color: #00E598;
    text-decoration: none;
   }
+}
+
+.add {
+  background-color: #00402A;
+  color: #FFF;
+  margin-top: 1.5em;
 }
