@@ -69,6 +69,11 @@ a:hover, a:active {
     color: #FFF;
     text-decoration: none; }
 
+.view-all {
+  background-color: #007F54;
+  color: #FFF;
+  margin-top: 1.5em; }
+
 .comment {
   border-top: 1px solid #00E598;
   margin-top: 2em; }

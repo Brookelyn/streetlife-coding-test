@@ -86,7 +86,8 @@ app.controller('homeController', function($scope, newsFeed) {
     return {
       template: '<p class="comment-body" ng-bind-html="comment.body"></p>'
     };
-});
+  })
+ ;
 
 // Comment feed controller
 app.controller('commentsController', function($scope, commentFeed) {
@@ -99,4 +100,3 @@ app.controller('commentsController', function($scope, commentFeed) {
       template: '<p class="comment-text" ng-bind-html="comment.body"></p>'
     };
 });
-

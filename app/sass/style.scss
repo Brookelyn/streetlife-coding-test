@@ -39,6 +39,7 @@ a:hover, a:active  {
   font-size: 2.5em;
   line-height: 1em;
   margin-bottom: 0.5em;
+  
   a {
     color: #00402A;
     text-decoration: none;
@@ -92,6 +93,12 @@ a:hover, a:active  {
     color: #FFF;
     text-decoration: none;
   } 
+}
+
+.view-all {
+  background-color: #007F54;
+  color: #FFF;
+  margin-top: 1.5em;
 }
 
 .comment {
