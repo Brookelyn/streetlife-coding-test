@@ -95,12 +95,8 @@ app.controller('commentsController', function($scope, commentFeed) {
   });
 })
   .directive('commentText', function() {
-    if (comment.hasOwnProperty("body")) {
-      return {
-        template: '<p class="comment-text" ng-bind-html="comment.body"></p>'
-      };
-    } else {
-      return "";
-    }
+    return {
+      template: '<p class="comment-text" ng-bind-html="comment.body"></p>'
+    };
 });
 

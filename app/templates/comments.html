@@ -1,24 +1,17 @@
 <article class="container-fluid">
   <ul>
-    <li ng-repeat="comment in feed">
-      <div class="row comments">
-  
-        <div class="row">
-          <div class="col-xs-2">
-            <img class="img-responsive img-thumbnail" src="{{ comment.author.avatar }}" alt="Avatar" />
+    <li ng-repeat="comment in feed" class="comment">
+      <div class="row comment-wrapper">
+        <div class="col-xs-2">
+            <img class="img-responsive img-thumbnail img-author" src="{{ comment.author.avatar }}" alt="Avatar" />
           </div>
           <div class="col-xs-10">
-            <div class="row">
-              <h3 class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name}}</a></h3>
-              <p class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</p> 
-            </div>
-          </div>
+            <p>
+              <span class="comment-author"><a href="https://www.streetlife.com/p/{{ comment.author.profile_id }}">{{ comment.author.display_name }}</a></span>
+              <span class="posted-date"> around <span am-time-ago="comment.updated_at"></span> near {{ comment.author.nearest_area.name }}</span>
+            </p> 
+            <div comment-text></div>
         </div>
-
-        <div class="col-xs-12">
-          <div comment-text></div>
-        </div>
-
       </div>
     </li>
   </ul>
